@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_login_App">اپلیکیشن دارو گیاهی</string>
+    <string name="label_login">ورود به حساب کاربری</string>
+    <string name="label_authentication_email_hint">تلفن همراه</string>
+    <string name="label_authentication_password_hint">رمز عبور</string>
+    <string name="label_sign_up">ایجاد حساب کاربری</string>
+    <string name="action_settings">تنظیمات</string>
+</resources>

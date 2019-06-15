@@ -1,0 +1,71 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_menu_yellow_24dp"
+                android:id="@+id/meno_toolbar"/>
+
+            <com.example.herbaldrugsdemo.Assets.CustomFontTextView
+                android:id="@+id/date_toobar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/meno_toolbar"
+                tools:text="سه شنبه بیست و هفتم آذر 1397"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:textColor="@color/white"/>
+
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/cart_icon_toolbar"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/search_bar_icon_toolbar"
+                android:src="@drawable/ic_search_yellow_24dp"/>
+
+
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_shopping_cart_yellow_24dp"
+                android:id="@+id/cart_icon_toolbar"/>
+
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:id="@+id/badge_icon_toolbar"
+                android:layout_toLeftOf="@id/cart_icon_toolbar"
+                android:layout_alignTop="@id/cart_icon_toolbar"
+                app:nbMaxTextLength="2"
+                android:layout_marginRight="-28dp"
+                android:layout_marginTop="-15dp">
+            </com.nex3z.notificationbadge.NotificationBadge>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>
