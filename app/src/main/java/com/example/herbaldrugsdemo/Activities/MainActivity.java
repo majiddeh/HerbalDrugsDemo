@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +47,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener{
 
-
+    private static final int Time_Between_Two_Back =1200;
+    private long TimeBackPressed;
     NavigationView navigationView;
     ImageView search_bar_icon, cart,userAvatarImageView,imgNaviToolbar;
     TextView date,userEmailTextView;
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     RecyclerView productListRecycler;
     SliderLayout sliderLayout;
     DrawerLayout drawerLayout;
+    CardView category;
     public static final int REQUEST_CODE_LOGIN=1001;
     public static final int RESULT_OK=1;
 
@@ -91,8 +95,27 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
                 drawerLayout.openDrawer(Gravity.RIGHT);
             }
         });
+        category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(Gravity.RIGHT) ) {
+            drawerLayout.closeDrawer(Gravity.RIGHT);
+        }else if(TimeBackPressed + Time_Between_Two_Back >System.currentTimeMillis() ){
+            super.onBackPressed();
+            return;
+        }else{
+            Toast.makeText(getBaseContext(),"به منظور خروج دوباره کلیک کنید",Toast.LENGTH_SHORT).show();
+        }
+        TimeBackPressed =System.currentTimeMillis();
     }
 
     private void setUpNavigation() {
@@ -270,6 +293,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
         navigationView = findViewById(R.id.nav_view);
         sliderLayout=findViewById(R.id.slider);
+        category=findViewById(R.id.card_category);
         search_bar_icon = findViewById(R.id.search_bar_icon_toolbar);
         cart = findViewById(R.id.cart_icon_toolbar);
         date = findViewById(R.id.date_toobar);
