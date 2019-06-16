@@ -243,11 +243,11 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
     private void sliderInitialize() {
         HashMap<String,String> url_map = new HashMap<String,String>();
-        url_map.put("Majid Dehghan","http://192.168.1.6/Medicknowledge/uploads/banners/banner1.jpg");
-        url_map.put("Pooyan Habibi","http://192.168.1.6/Medicknowledge/uploads/banners/banner2.jpg");
-        url_map.put("Majid dehghan","http://192.168.1.6/Medicknowledge/uploads/banners/banner3.jpg");
-        url_map.put("BloodBorn","http://192.168.1.6/Medicknowledge/uploads/banners/banner4.jpg");
-        url_map.put("Uncharted","http://192.168.1.6/Medicknowledge/uploads/banners/banner2.jpg");
+        url_map.put("Majid Dehghan","http://192.168.1.3/Medicknowledge/uploads/banners/banner1.jpg");
+        url_map.put("Pooyan Habibi","http://192.168.1.3/Medicknowledge/uploads/banners/banner2.jpg");
+        url_map.put("Majid dehghan","http://192.168.1.3/Medicknowledge/uploads/banners/banner3.jpg");
+        url_map.put("BloodBorn","http://192.168.1.3/Medicknowledge/uploads/banners/banner4.jpg");
+        url_map.put("Uncharted","http://192.168.1.3/Medicknowledge/uploads/banners/banner2.jpg");
 
         for (String name :url_map.keySet()){
             TextSliderView textSliderView = new TextSliderView(this);

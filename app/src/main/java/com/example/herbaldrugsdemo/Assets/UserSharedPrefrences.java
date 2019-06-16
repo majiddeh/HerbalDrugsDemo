@@ -11,14 +11,14 @@ public class UserSharedPrefrences {
         sharedPreferences = context.getSharedPreferences(USER_SHARED_PREF_NAME, Context.MODE_PRIVATE);
     }
 
-    public void saveUserLoginInfo(String email){
+    public void saveUserLoginInfo(String phone){
         SharedPreferences.Editor editor=sharedPreferences.edit();
-        editor.putString("email",email);
+        editor.putString("phone",phone);
         editor.commit();
     }
 
     public String getUserLoginInfo(){
-        return sharedPreferences.getString("email","ورود/عضویت");
+        return sharedPreferences.getString("phone","ورود/عضویت");
     }
 
 }
